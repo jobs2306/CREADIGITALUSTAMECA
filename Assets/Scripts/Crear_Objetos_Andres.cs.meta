@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 7af77334a899b4a479837325ebbde61b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - HAmarilloPrefab: {fileID: 3415556957661782993, guid: 5a43c861991f7bc4190377b713a4a9ee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -15,11 +15,11 @@ public class movimientojugador : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetAxis("Horizontal") == -1)
+        if (Input.GetKeyDown("left"))
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        if (Input.GetAxis("Horizontal") == 1)
+        if (Input.GetKeyDown("right"))
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
