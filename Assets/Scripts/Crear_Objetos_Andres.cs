@@ -7,13 +7,10 @@ public class Crear_Objetos_Andres : MonoBehaviour
     
     public GameObject HAmarilloPrefab;
     public GameObject HRojoPrefab;
-    public GameObject Petroleo;
+    public GameObject TPPrefab; //Prefab de petroleo
+    public GameObject TOPrefab;//Trampa oso prefab
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -23,6 +20,12 @@ public class Crear_Objetos_Andres : MonoBehaviour
         }
         if (Input.GetKeyDown("o")){
             Instantiate(HRojoPrefab);
+        }
+        if (Input.GetKeyDown("i")){
+            Instantiate(TOPrefab);
+        }
+        if (Input.GetKeyDown("l")){
+            Instantiate(TPPrefab);
         }
 
     }

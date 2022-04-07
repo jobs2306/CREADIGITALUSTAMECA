@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3204856851991430773}
   - component: {fileID: 7189262069976315932}
   - component: {fileID: 2534061526583733836}
+  - component: {fileID: 1053789041}
   m_Layer: 0
   m_Name: Andres Hongo Rojo
   m_TagString: Untagged
@@ -93,7 +94,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -195,3 +196,15 @@ PolygonCollider2D:
       - {x: 3.1716125, y: -13.65993}
       - {x: 3.7754798, y: -13.508964}
       - {x: 4.9832144, y: -12.980579}
+--- !u!114 &1053789041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701690084691994458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68192e23436696245995226702643809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
