@@ -15,7 +15,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
     float maxHealth; //tamaño de la barra de vida
     float minRange;
     float maxRange;
-    public int porcentajeVida;
+    int porcentajeVida;
 
     void Start()
     {
@@ -102,5 +102,9 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         }
     }
     
+    public int getPorcentajeVida()
+    {
+        return porcentajeVida;
+    }
 
 }

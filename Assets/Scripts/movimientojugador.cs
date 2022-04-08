@@ -9,7 +9,7 @@ public class movimientojugador : MonoBehaviour
         SpriteRenderer jugadorRender;
         bool VoltearJugador;
         Rigidbody2D jugadorRB;
-        float fuerzaSalto = 5f;
+        float fuerzaSalto = 50f;
         int Limsaltos = 2;
         int saltosHechos = 0;
 
@@ -22,6 +22,7 @@ public class movimientojugador : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(saltosHechos);
         float movimiento = Input.GetAxis("Horizontal");
 
         if (movimiento > 0 && !VoltearJugador)
