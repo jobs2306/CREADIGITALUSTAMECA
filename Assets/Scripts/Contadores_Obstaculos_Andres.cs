@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Contadores_Obstaculos_Andres : MonoBehaviour
 {
-    
+    public GameObject barraVida;
     int contHA; //Contador hongos amarillos
     int contHR; //Contador hongos rojos
     int contTO; //Contador trampas osos
     int contTP; //Contador trampa petroleo
     //GameObject maxHealth = GameObject.Find("LifeBar").GetProperty(localScale);
-    float maxHealth = 20f; //tamaño de la barra de vida
+    float maxHealth; //tamaño de la barra de vida
     float minRange;
     float maxRange;
     void Start()
     {
-        maxRange = transform.position.x;
-        minRange = maxRange -maxHealth;
+        maxHealth = barraVida.transform.localScale.x;
+        transform.position = new Vector3(barraVida.transform.position.x + (maxHealth) / 2, barraVida.transform.position.y, 0);
+        maxRange = barraVida.transform.position.x + (barraVida.transform.localScale.x) / 2;
+        minRange = maxRange - maxHealth;
     }
     
     public void aumentarContadorHA (int hA)
