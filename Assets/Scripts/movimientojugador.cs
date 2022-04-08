@@ -14,7 +14,7 @@ public class movimientojugador : MonoBehaviour
 
     void Update()
     {
-
+        transform.rotation = Quaternion.Euler(0,0,1.19f);
         if (Input.GetKeyDown("left"))
         {
             GetComponent<SpriteRenderer>().flipX = true;

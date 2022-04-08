@@ -9,6 +9,8 @@ public class Crear_Objetos_Andres : MonoBehaviour
     public GameObject HRojoPrefab;
     public GameObject TPPrefab; //Prefab de petroleo
     public GameObject TOPrefab;//Trampa oso prefab
+    public GameObject GAPrefab;//Gota agua prefab
+    public GameObject COPrefab;//Corazon oso prefab
     
 
 
@@ -26,6 +28,12 @@ public class Crear_Objetos_Andres : MonoBehaviour
         }
         if (Input.GetKeyDown("l")){
             Instantiate(TPPrefab);
+        }
+        if (Input.GetKeyDown("k")){
+            Instantiate(GAPrefab);
+        }
+        if (Input.GetKeyDown("j")){
+            Instantiate(COPrefab);
         }
 
     }

@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class Contadores_Obstaculos_Andres : MonoBehaviour
 {
-    
+    public GameObject barraVida;
     int contHA; //Contador hongos amarillos
     int contHR; //Contador hongos rojos
     int contTO; //Contador trampas osos
     int contTP; //Contador trampa petroleo
+    int contGA; //Contador trampa petroleo
+    int contCO; //Contador trampa petroleo
     //GameObject maxHealth = GameObject.Find("LifeBar").GetProperty(localScale);
-    float maxHealth = 20f; //tamaño de la barra de vida
+    float maxHealth; //tamaño de la barra de vida
     float minRange;
     float maxRange;
+    public int porcentajeVida;
+
     void Start()
     {
-        maxRange = transform.position.x;
+        maxHealth = barraVida.transform.localScale.x;
+        transform.position = new Vector3(barraVida.transform.position.x + (maxHealth)/2, barraVida.transform.position.y, 0);
+        maxRange = barraVida.transform.position.x + (barraVida.transform.localScale.x)/2;
         minRange = maxRange -maxHealth;
+        porcentajeVida = 100;  
     }
     
     public void aumentarContadorHA (int hA)
@@ -25,6 +32,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         if(transform.position.x < maxRange)
         {
             transform.position = new Vector3(transform.position.x + maxHealth*0.1f, transform.position.y, transform.position.z);
+            porcentajeVida +=10;
         }
         Debug.Log("Hongo amarillo " + contHA);
     }
@@ -35,6 +43,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         if(transform.position.x > minRange)
         {
             transform.position = new Vector3(transform.position.x - maxHealth*0.1f, transform.position.y, transform.position.z);
+            porcentajeVida -=10;
         }
         Debug.Log("Hongo Rojo " + contHR);
     }
@@ -45,6 +54,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         if(transform.position.x > minRange)
         {
             transform.position = new Vector3(transform.position.x - maxHealth*0.5f, transform.position.y, transform.position.z);
+            porcentajeVida = 50;
         }
         Debug.Log("Trampa oso " + contTO);
     }
@@ -55,7 +65,42 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         if(transform.position.x > minRange)
         {
             transform.position = new Vector3(transform.position.x - maxHealth*0.1f, transform.position.y, transform.position.z);
+            porcentajeVida -=10;
         }        
         Debug.Log("Trampa petroleo " + contTP);
     }
+    public void aumentarContadorCO (int cO)
+    {
+        contCO += cO;
+        if(transform.position.x < maxRange)
+        {
+            transform.position = new Vector3(maxRange, transform.position.y, transform.position.z);
+            porcentajeVida = 100;
+        }        
+        Debug.Log("Corazon oso " + contCO);
+    }
+    public void aumentarContadorGA (int gA)
+    {
+        contGA += gA;
+        if(transform.position.x < maxRange)
+        {
+            transform.position = new Vector3(transform.position.x + maxHealth*0.1f, transform.position.y, transform.position.z);
+            porcentajeVida +=10;
+        }        
+        Debug.Log("Trampa petroleo " + contTP);
+    }
+    
+    void update()
+    {
+        if (porcentajeVida > 100)
+        {
+            porcentajeVida=100;
+        }
+        if(porcentajeVida<0)
+        {
+            porcentajeVida=0;
+        }
+    }
+    
+
 }
