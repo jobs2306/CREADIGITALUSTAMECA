@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class movimientojugador : MonoBehaviour
 {
-    public float velocidad = 10;
-    public float fuerzaSalto = 500f;
-    bool puedeSaltar = false;
+        public float velocidad = 10;
+        public float velocidadSalto;
     
     void Start()
     {
@@ -15,21 +14,7 @@ public class movimientojugador : MonoBehaviour
 
     void Update()
     {
-        rotar();
-        saltar();
-        desplazarse();        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "suelo")
-        {
-            puedeSaltar = true;
-        }
-    }
-
-    private void rotar()
-    {
+        transform.rotation = Quaternion.Euler(0,0,1.19f);
         if (Input.GetKeyDown("left"))
         {
             GetComponent<SpriteRenderer>().flipX = true;
@@ -38,29 +23,10 @@ public class movimientojugador : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-    }
-
-    private void saltar()
-    {
-        if (Input.GetKeyDown("up") && puedeSaltar)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, fuerzaSalto));
-            puedeSaltar = false;
-        }
         
-         
-    }
+            gameObject.GetComponent<Transform>().Translate(new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * velocidad, 0, 0));
+                   
 
-    private void desplazarse()
-    {
-        if (Input.GetKey("left"))
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-5, 0));
-        }
-        if (Input.GetKey("right"))
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(5, 0));
-        }
     }
 
 
