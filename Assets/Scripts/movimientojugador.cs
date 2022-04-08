@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class movimientojugador : MonoBehaviour
 {
-        public float velocidad = 10;
-        bool puedeSaltar = false;
+    public float velocidad = 10;
+    public float fuerzaSalto = 500f;
+    bool puedeSaltar = false;
     
     void Start()
     {
@@ -14,23 +15,9 @@ public class movimientojugador : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown("left"))
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (Input.GetKeyDown("right"))
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        if (Input.GetKeyDown("up") && puedeSaltar)
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400f));
-            puedeSaltar = false;
-        }
-        gameObject.GetComponent<Transform>().Translate(new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * velocidad, 0, 0));
-                   
-
+        rotar();
+        saltar();
+        desplazarse();        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -40,4 +27,41 @@ public class movimientojugador : MonoBehaviour
             puedeSaltar = true;
         }
     }
+
+    private void rotar()
+    {
+        if (Input.GetKeyDown("left"))
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if (Input.GetKeyDown("right"))
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
+
+    private void saltar()
+    {
+        if (Input.GetKeyDown("up") && puedeSaltar)
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, fuerzaSalto));
+            puedeSaltar = false;
+        }
+        
+         
+    }
+
+    private void desplazarse()
+    {
+        if (Input.GetKey("left"))
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-5, 0));
+        }
+        if (Input.GetKey("right"))
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(5, 0));
+        }
+    }
+
+
 }
