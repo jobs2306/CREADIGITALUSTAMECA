@@ -5,7 +5,7 @@ using UnityEngine;
 public class movimientojugador : MonoBehaviour
 {
         public float velocidad = 10;
-        public float velocidadSalto;
+        bool puedeSaltar = false;
     
     void Start()
     {
@@ -23,11 +23,21 @@ public class movimientojugador : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        
-            gameObject.GetComponent<Transform>().Translate(new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * velocidad, 0, 0));
+        if (Input.GetKeyDown("up") && puedeSaltar)
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 400f));
+            puedeSaltar = false;
+        }
+        gameObject.GetComponent<Transform>().Translate(new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime * velocidad, 0, 0));
                    
 
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "suelo")
+        {
+            puedeSaltar = true;
+        }
+    }
 }
