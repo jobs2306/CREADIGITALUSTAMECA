@@ -102,5 +102,9 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         }
     }
     
+    public int getPorcentajeVida()
+    {
+        return porcentajeVida;
+    }
 
 }

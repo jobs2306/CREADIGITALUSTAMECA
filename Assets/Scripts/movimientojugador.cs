@@ -9,7 +9,7 @@ public class movimientojugador : MonoBehaviour
         SpriteRenderer jugadorRender;
         bool VoltearJugador;
         Rigidbody2D jugadorRB;
-        float fuerzaSalto = 5f;
+        public float fuerzaSalto = 5f;
         int Limsaltos = 2;
         int saltosHechos = 0;
 
@@ -40,9 +40,17 @@ public class movimientojugador : MonoBehaviour
             if (saltosHechos<Limsaltos)
             {
                 jugadorRB.AddForce(new Vector2(0f,fuerzaSalto),ForceMode2D.Impulse);
-                saltosHechos++;
+                saltosHechos++; 
             }
         }
+    }
+     void OnCollisionEnter2D(Collision2D obj) 
+    {
+        if (obj.collider.tag == "suelo")
+        {
+            saltosHechos=0;
+        }
+        
     }
 
     void Voltear()
