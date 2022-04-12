@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class Barra_Vida_Andres : MonoBehaviour
 {   
-    public GameObject indicadorVida;
-    public GameObject anterior;
+    GameObject indicadorVida;
+    GameObject anterior;
     int porcentajeVida;
+    int porcentajeVidaAnterior;
     double[] rangos;
     double valorRango;
     // Start is called before the first frame update
     void Start()
     {
+        anterior = gameObject.transform.GetChild(0).gameObject;
+        anterior.SetActive(true);
         indicadorVida = GameObject.Find("Andres_Indicador_de_vida");
-        anterior = gameObject.transform.GetChild(1).gameObject; 
-        rangos = new double[15];
+        porcentajeVidaAnterior = indicadorVida.GetComponent<Contadores_Obstaculos_Andres>().porcentajeVida;
+        rangos = new double[14];
         valorRango = 100.0/14.0;
-        for (int i=0; i<14; i++)
-        {
-            rangos[i] = 100 - valorRango*i;
-            Debug.Log(rangos[i]);
-        }
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        //for (int i=0; i<=13; i++)
+        //{
+        //    rangos[i] = 100 - valorRango*i;
+        //    Debug.Log(rangos[i]);
+        //}
+        //for (int i = 0; i <= 12; i++)   //De 0 a 12 hay 13 posiciones, igual al numero de recursos porque van del 1 al 14 saltandose el 3
+        //{
+        //    Debug.Log(gameObject.transform.GetChild(i).name);
+        //}
+
     }
 
     // Update is called once per frame
@@ -29,20 +38,23 @@ public class Barra_Vida_Andres : MonoBehaviour
      porcentajeVida = indicadorVida.GetComponent<Contadores_Obstaculos_Andres>().porcentajeVida;
         if(porcentajeVida>=100)
         {
-            
-            GetComponent<SpriteRenderer>().enabled = true;
-            gameObject.transform.GetChild(1).gameObject.SetActive(true); 
-            gameObject.transform.GetChild(2).gameObject.SetActive(false); 
+           //anterior.GetComponent<SpriteRenderer>().enabled = true;
+           gameObject.transform.GetChild(0).gameObject.SetActive(true); 
+           //gameObject.transform.GetChild(2).gameObject.SetActive(false); 
         }
-        for (int i=0; i<13;i++)
+        if (porcentajeVida != porcentajeVidaAnterior)
         {
-            if (porcentajeVida <= rangos[i])
+            porcentajeVidaAnterior = porcentajeVida;
+            for (int i = 0; i <= 12; i++)
             {
-                gameObject.transform.GetChild(i).gameObject.SetActive(true); 
-                anterior.gameObject.SetActive(false);
-                anterior = gameObject.transform.GetChild(i).gameObject; 
+                if (porcentajeVida >= rangos[i])
+                {
+                    gameObject.transform.GetChild(i).gameObject.SetActive(true);
+                    anterior.SetActive(false);
+                    anterior = gameObject.transform.GetChild(i).gameObject;
+                    break;
+                }
             }
         }
-
     }
 }
