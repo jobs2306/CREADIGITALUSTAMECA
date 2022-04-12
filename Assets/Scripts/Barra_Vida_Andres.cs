@@ -9,13 +9,15 @@ public class Barra_Vida_Andres : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        indicadorVida = GameObject.Find("Andres_Indicador_vida");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        porcentajeVida = indicadorVida.GetComponent<Contadores_Obstaculos_Andres>().getPorcentajeVida();
+        indicadorVida = GameObject.Find("Andres indicador de vida");
+        porcentajeVida = indicadorVida.GetComponent<Contadores_Obstaculos_Andres>().porcentajeVida;
+        Debug.Log(porcentajeVida);
         if(porcentajeVida>=100)
         {
             GetComponent<SpriteRenderer>().enabled = true;
