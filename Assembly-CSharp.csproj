@@ -42,13 +42,13 @@
      <Compile Include="Assets\Scripts\movimientojugador.cs" />
      <Compile Include="Assets\Scripts\Hongo_Amarillo_Andres.cs" />
      <Compile Include="Assets\Scripts\Petroleo_Oso_Andres.cs" />
+     <Compile Include="Assets\Scripts\ControlarPrefabsFondo.cs" />
      <Compile Include="Assets\Scripts\Crear_Objetos_Andres.cs" />
      <Compile Include="Assets\Scripts\LifeBar_Andres.cs" />
      <Compile Include="Assets\Scripts\Corazon_Andres.cs" />
      <Compile Include="Assets\Scripts\Trampa_Oso_Andres.cs" />
      <Compile Include="Assets\Scripts\Hongo_Rojo_Andres.cs" />
      <Compile Include="Assets\Scripts\controlpisos.cs" />
-     <Compile Include="Assets\Scripts\ControlarPrefabsFondo.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.32f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class controlpisos : MonoBehaviour
 {
-    float velocidadPiso = 0.8f;
+    float velocidadPiso = 1;
     // Start is called before the first frame update
     void Start()
     {
