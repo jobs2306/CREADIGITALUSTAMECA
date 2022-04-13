@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sebastian.unity
     guid: ab7ca70c2e35bd540b868dde97b90f55
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a694c30adebcc2440bf88f9587154976
   m_configObjects: {}
