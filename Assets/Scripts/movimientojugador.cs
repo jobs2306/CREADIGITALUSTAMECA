@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class movimientojugador : MonoBehaviour
 {
@@ -22,8 +23,15 @@ public class movimientojugador : MonoBehaviour
 
     void Update()
     {
+        if (transform.position.y >= 12)
+        {
+            transform.position = new Vector3(transform.position.x, 12, transform.position.z);
+        }
+        if (transform.position.y <= -15)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
         float movimiento = Input.GetAxis("Horizontal");
-
         if (movimiento > 0 && !VoltearJugador)
         {
             Voltear();

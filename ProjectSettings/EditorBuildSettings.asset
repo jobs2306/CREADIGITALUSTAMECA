@@ -8,25 +8,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Joel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Duvan.unity
     guid: b31f0774336809743956d99e15cd2c6a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Angie.unity
     guid: 96dd444c1d0a0b94daaf542e6dfe7ef6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Andres.unity
     guid: 3d20ebef77d1a234e8132032e399d09d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alejandro.unity
     guid: 77f6fb5e90146e14b8980b61069ae1a8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Juanca.unity
     guid: f93e3fc1f47381d47987ed08dccf7b13
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Mauro.unity
     guid: 7eb920a4d2fc1f840bcba8ad42eea067
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sebastian.unity
     guid: ab7ca70c2e35bd540b868dde97b90f55
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a694c30adebcc2440bf88f9587154976
+  - enabled: 1
+    path: Assets/Scenes/MauricioG.unity
+    guid: 2799622333c59e447aea24677aecdb0a
   m_configObjects: {}

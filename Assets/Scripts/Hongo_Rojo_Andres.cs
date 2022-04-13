@@ -7,7 +7,7 @@ public class Hongo_Rojo_Andres : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other) 
     {
-       GameObject indicador = GameObject.Find("Andres Indicador de vida");
+       GameObject indicador = GameObject.Find("Andres_Indicador_de_vida");
         indicador.GetComponent<Contadores_Obstaculos_Andres>().aumentarContadorHR(1);
         Destroy(gameObject);
     }

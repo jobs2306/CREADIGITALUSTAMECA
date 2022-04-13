@@ -16,11 +16,12 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
     float minRange;
     float maxRange;
     public int porcentajeVida;
+    public float PosZ = -2;
 
     void Start()
     {
         maxHealth = barraVida.transform.localScale.x;
-        transform.position = new Vector3(barraVida.transform.position.x + (maxHealth)/2, barraVida.transform.position.y, 0);
+        transform.position = new Vector3(barraVida.transform.position.x + (maxHealth)/2, barraVida.transform.position.y, PosZ);
         maxRange = barraVida.transform.position.x + (barraVida.transform.localScale.x)/2;
         minRange = maxRange -maxHealth;
         porcentajeVida = 100;  
@@ -31,7 +32,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         contHA += hA;
         if(transform.position.x < maxRange)
         {
-            transform.position = new Vector3(transform.position.x + maxHealth*0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + maxHealth*0.1f, transform.position.y, PosZ);
             porcentajeVida +=10;
         }
         Debug.Log("Hongo amarillo " + contHA);
@@ -42,7 +43,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         contHR += hR;
         if(transform.position.x > minRange)
         {
-            transform.position = new Vector3(transform.position.x - maxHealth*0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - maxHealth*0.1f, transform.position.y, PosZ);
             porcentajeVida -=10;
         }
         Debug.Log("Hongo Rojo " + contHR);
@@ -53,7 +54,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         contTO += tO;
         if(transform.position.x > minRange)
         {
-            transform.position = new Vector3(transform.position.x - maxHealth*0.5f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - maxHealth*0.5f, transform.position.y, PosZ);
             porcentajeVida = 50;
         }
         Debug.Log("Trampa oso " + contTO);
@@ -64,7 +65,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         contTP += tP;
         if(transform.position.x > minRange)
         {
-            transform.position = new Vector3(transform.position.x - maxHealth*0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - maxHealth*0.1f, transform.position.y, PosZ);
             porcentajeVida -=10;
         }        
         Debug.Log("Trampa petroleo " + contTP);
@@ -74,7 +75,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         contCO += cO;
         if(transform.position.x < maxRange)
         {
-            transform.position = new Vector3(maxRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(maxRange, transform.position.y, PosZ);
             porcentajeVida = 100;
         }        
         Debug.Log("Corazon oso " + contCO);
@@ -84,7 +85,7 @@ public class Contadores_Obstaculos_Andres : MonoBehaviour
         contGA += gA;
         if(transform.position.x < maxRange)
         {
-            transform.position = new Vector3(transform.position.x + maxHealth*0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + maxHealth*0.1f, transform.position.y, PosZ);
             porcentajeVida +=10;
         }        
         Debug.Log("Trampa petroleo " + contTP);
