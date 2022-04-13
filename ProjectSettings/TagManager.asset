@@ -3,13 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - suelo
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - capasuelo
+  - 
   - Water
   - UI
   - 
